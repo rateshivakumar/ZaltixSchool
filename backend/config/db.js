@@ -10,3 +10,4 @@ mongoose.connect(dbURI)
 export const Db = mongoose.connection;
 
 
+.
