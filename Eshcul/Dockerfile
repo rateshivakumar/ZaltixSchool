@@ -1,15 +1,22 @@
-FROM node:18-alpine as build
+# Build stage
+FROM node:18 AS builder
+
 WORKDIR /app
-COPY package*.json ./
+
+# Copy dependency files and install
+COPY package.json package-lock.json ./
 RUN npm install
+
+# Copy the rest of the source
 COPY . .
-RUN npm run build
+
+# Expo export (works for bundlers other than Webpack)
+RUN npx expo export
 
 # Serve with Nginx
 FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 81
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 8081
 CMD ["nginx", "-g", "daemon off;"]
 
-
-Serves mobile frontend via Nginx on port 81.

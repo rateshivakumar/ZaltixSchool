@@ -50,7 +50,7 @@ const AddBusStudentModal: React.FC<AddBusStudentModalProps> = ({
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/addstudentbus', formData, {
+      const response = await axios.post('http://backend:5000/addstudentbus', formData, {
         headers: {
           'Content-Type': 'application/json'
         }

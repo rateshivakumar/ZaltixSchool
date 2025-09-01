@@ -53,7 +53,7 @@ const AddBusForm = ({ onClose }: AddBusFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/addbus', formData); // ✅ Backend Endpoint
+      await axios.post('http://backend:5000/addbus', formData); // ✅ Backend Endpoint
       onClose(); // Close modal after submission
     } catch (err) {
       console.error('Error submitting form:', err);

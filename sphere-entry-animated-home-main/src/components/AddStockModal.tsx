@@ -47,7 +47,7 @@ const AddStockModal = ({ isOpen, onClose, onAddStock }: AddStockModalProps) => {
     };
 
     try {
-      await axios.post('http://localhost:5000/Addstock', newStock, {
+      await axios.post('http://backend:5000/Addstock', newStock, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -1,24 +1,19 @@
-
-version: "3.8"
-
 services:
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    build: ./backend
+    container_name: zaltixschool-backend
     ports:
       - "5000:5000"
 
-  web-frontend:
-    build:
-      context: ./frontend/web
-      dockerfile: Dockerfile
+  eshcul:
+    build: ./Eshcul
+    container_name: zaltixschool-eshcul
     ports:
-      - "80:80"
+      - "8081:80"
 
-  mobile-frontend:
-    build:
-      context: ./frontend/mobile
-      dockerfile: Dockerfile
+  web:
+    build: ./sphere-entry-animated-home-main
+    container_name: zaltixschool-sphere
     ports:
-      - "81:80"
+      - "8083:80"
+
