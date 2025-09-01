@@ -1,1 +1,4 @@
-sphere-entry-animated-home-main/node_modules/
+node_modules/
+*.log
+dist/
+.env

@@ -49,4 +49,3 @@ exports.saveBulkAttendance = async (req, res) => {
   }
 };
 
-export 
